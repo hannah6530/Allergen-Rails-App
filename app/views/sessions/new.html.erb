@@ -1,0 +1,12 @@
+<h1>Welcome to Share my Recipes</h1>
+
+<h4>Use the login form below to access your credentials </h4>
+<br>
+
+<%= form_tag ({controller: 'sessions', action: 'create', method: 'post'}) do %>
+  Username: <input user_name="user_name" type="text" id="user_name">
+  Password: <input password="password" type="text" id="password">
+  <input type="submit" value='login'>
+<% end %>
+
+<p>If you do not have an account with us <%= link_to "Click Here", "/users/new" %> to create one</p>

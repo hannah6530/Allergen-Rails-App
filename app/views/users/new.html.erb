@@ -1,0 +1,12 @@
+<h1>Create Account</h1>
+
+
+<%= form_for @user, controller: 'users', action: 'create' do |form| %>
+<%= form.label :name %>
+<%= form.text_field :name %>
+<%= form.label :user_name %>
+<%= form.text_field :user_name %>
+<%= form.label :password%>
+<%= form.text_field :password %>
+<%= form.submit %>
+<% end %>

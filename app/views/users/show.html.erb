@@ -1,0 +1,12 @@
+<h2><%= @user %>'s Profile</h2>
+
+<h3>Account Information</h3>
+<p>Name: <%= @user.name%> </p>
+<p>Username: ******* </p>
+<p>Password: ******* </p>
+
+<h3>Recipes</h3>
+<ul>
+  <% @user.recipes.each do |my_recipe|%>
+  <p>Name: <%=link_to my_recipe.name, my_recipe%> </p>
+</ul>
