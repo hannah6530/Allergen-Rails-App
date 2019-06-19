@@ -1,0 +1,6 @@
+<h3>Recipes</h3>
+<ul>
+  <% @user.recipes.each do |my_recipe|%>
+  <p>Name: <%=link_to my_recipe.name, my_recipe%> </p>
+  <% end %>
+</ul>

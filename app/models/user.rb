@@ -2,6 +2,7 @@ class User < ApplicationRecord
   has_many :recipes
 
   has_secure_password
+    
 
   # def password=(pass)
   #   self.password_digest = BCrypt::Password.create(pass)

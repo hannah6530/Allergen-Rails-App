@@ -2,14 +2,18 @@ class RecipesController < ApplicationController
   def index
     @recipe = Recipe.all
     @ingredients = Ingredient.all
+    @users = User.all
   end
 
   def new
     @recipe = Recipe.new
     @ingredients = Ingredient.all
+    @users.User.all
   end
 
   def create
+    @user = User.new
+    @ingredient = Ingredient.new
     @recipe = Recipe.create(recipe_params)
     redirect_to @recipe
   end
@@ -27,6 +31,7 @@ class RecipesController < ApplicationController
   def show
     @recipe = Recipe.find(params[:id])
     @ingredient = @recipe.ingredients
+    @user = @recipe.user
     # @user = Recipe.user
   end
 

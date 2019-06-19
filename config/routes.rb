@@ -3,12 +3,19 @@ Rails.application.routes.draw do
   resources :users
   resources :recipes
   resources :ingredients
-  resources :login
+  # resources :login
+
 
   # root 'welcome#home'
+
+  get '/login' => 'login#new'
+  post '/login' => 'login#create'
+  # root 'application#hello'
+  # post '/logout' => 'sessions#destroy'
 
 
   # get '/login' => 'sessions#new'
   # post '/login' => 'sessions#create'
-  # post '/logout' => 'sessions#destroy'
+
+  # get '/' => ''
 end

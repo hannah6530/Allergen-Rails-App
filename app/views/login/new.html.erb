@@ -1,5 +1,15 @@
 <h1>Welcome to Share my Recipes</h1>
 
+<% if flash[:errors] %>
+<ul>
+  <% flash[:errors].each do |error_msg| %>
+  <li>
+    <%= error_msg %>
+    </li>
+    <%end%>
+  </ul>
+  <%end%>
+
 <h4>Use the login form below to access your credentials </h4>
 <br>
 

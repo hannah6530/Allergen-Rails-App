@@ -1,7 +1,7 @@
 class LoginController < ApplicationController
   # def new
   # end
-
+  #routes pattern: route controller method
   def create
     # return redirect_to(controller: 'sessions',
     #                    action: 'new') if !params[:user_name] || params[:password].empty?
@@ -13,8 +13,10 @@ class LoginController < ApplicationController
       redirect_to "/users/#{@user.id}"
     else
       flash[:messages] = "Incorrect username or password"
-      redirect_to new_login_path
+      redirect_to login_path
   end
+
+
 end
 
   def destroy
