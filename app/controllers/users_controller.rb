@@ -11,12 +11,16 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(user_params)
-    return redirect_to controller: 'users', action: 'new' unless @user.save
-    session[:user_id] = @user.id
-    redirect_to controller: 'welcome', action: 'home'
+    # return redirect_to controller: 'users', action: 'new' unless @user.save
+    # session[:user_id] = @user.id
+    # redirect_to controller: 'welcome', action: 'home'
     # redirect_to user
-
+    if @user.valid?
+      redirect_to @user
+    else
+      redirect_to new_user_path
   end
+end
 
   def show
     @user = User.find(params[:id])
@@ -26,9 +30,9 @@ class UsersController < ApplicationController
     # user = User.find(params[:id])
     # user.destroy
     # redirect_to users_path
-    session.delete :user_id
-
-   redirect_to '/'
+   #  session.delete :user_id
+   #
+   # redirect_to '/'
   end
 
   private

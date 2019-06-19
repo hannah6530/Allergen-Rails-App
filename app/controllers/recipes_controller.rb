@@ -1,12 +1,12 @@
 class RecipesController < ApplicationController
   def index
     @recipe = Recipe.all
-    @ingredient = Ingredient.all
+    @ingredients = Ingredient.all
   end
 
   def new
     @recipe = Recipe.new
-    @ingredient = Ingredient.all
+    @ingredients = Ingredient.all
   end
 
   def create
@@ -26,7 +26,7 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find(params[:id])
-    @ingredient = Recipe.ingredient
+    @ingredient = @recipe.ingredients
     # @user = Recipe.user
   end
 

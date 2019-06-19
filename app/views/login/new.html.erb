@@ -1,0 +1,14 @@
+<h1>Welcome to Share my Recipes</h1>
+
+<h4>Use the login form below to access your credentials </h4>
+<br>
+
+<%= form_tag "/login" do %>
+<%= label_tag :user_name %>
+<%= text_field_tag :user_name %>
+<%= label_tag :password %>
+<%= password_field_tag :password %>
+<%= submit_tag "Login" %>
+<% end %>
+
+<p>If you do not have an account with us <%= link_to "Click Here", "/users/new" %> to create one</p>
