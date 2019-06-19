@@ -10,17 +10,19 @@ class LoginController < ApplicationController
     # redirect_to controller: 'application', action: 'hello'
     @user = User.find_by(user_name: params[:user_name])
     if @user && @user.authenticate(params[:password])
+      flash[:messages] =  "Logging in #{@user.name}."
+      session[:user_id] = @user.id
       redirect_to "/users/#{@user.id}"
     else
       flash[:messages] = "Incorrect username or password"
-      redirect_to login_path
+      redirect_to new_login_path
   end
 
 
 end
 
   def destroy
-    # session.delete :user_name
-    # redirect_to controller: 'application', action: 'hello'
+    logout
+    redirect_to new_login_path
   end
 end

@@ -10,6 +10,15 @@
   </head>
 
   <body style="background-color:lightgreen;">
+    <header>
+      <% if @logged_in %>
+      <h3>
+        Logged in as: <%=@current_user.name %>
+      </h3>
+         <%= button_to "Log out #{@current_user.name}", "/logout", method: :delete %>
+           <% else %>
+             <% end %>
     <%= yield %>
+    </header>
   </body>
 </html>
