@@ -2,9 +2,9 @@
 
 <h3>Ingredients</h3>
 <ul>
-  <%= @recipe.ingredients.each do |recipe| %>
-  <p>
+  <% @recipe.ingredients.each do |recipe| %>
+  <li>
     <%= recipe.name %>
-    </p>
+    </li>
     <%end%>
   </ul>

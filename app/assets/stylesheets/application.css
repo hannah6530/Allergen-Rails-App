@@ -13,3 +13,20 @@
  *= require_tree .
  *= require_self
  */
+ body {
+   margin: 0;
+   padding: 0;
+   /* background: #000 linear-gradient(#222, #666) fixed;
+   color: #fff; */
+   /* background-image: url('IMG_1097.jpg'); */
+   background: linear-gradient(to right, red , yellow);
+   /* background: url(logo.jpg) top  center no-repeat; */
+   font-family: 'Snell Roundhand', cursive;
+   font-weight: bold;
+   font-size: 20px;
+ }
+
+ /* img {
+   max-width: 100%;
+   max-height: 100%;
+ } */
