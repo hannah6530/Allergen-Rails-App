@@ -10,7 +10,7 @@ class LoginController < ApplicationController
     # redirect_to controller: 'application', action: 'hello'
     @user = User.find_by(user_name: params[:user_name])
     if @user && @user.authenticate(params[:password])
-      flash[:messages] =  "Logging in #{@user.name}."
+      # flash[:messages] =  "Logging in #{@user.name}."
       session[:user_id] = @user.id
       redirect_to "/users/#{@user.id}"
     else

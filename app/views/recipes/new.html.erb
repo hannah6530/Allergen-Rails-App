@@ -1,10 +1,23 @@
 <h1>Create A New Recipe</h1>
+<% if flash[:errors] %>
+<ul>
+  <% flash[:errors].each do |error_msg| %>
+  <li>
+    <%= error_msg %>
+    </li>
+    <%end%>
+  </ul>
+  <%end%>
 
 <%= form_for @recipe do |form| %>
 <%= form.label :name %>
 <%= form.text_field :name %>
-<%= form.label :ingredient %>
+<%= form.label :ingredients %>
 <%= form.text_field :ingredients %>
-<%= form.collection_select :user_id, @users, :name, :id %>
+<%= form.collection_select :user_id, @users, :id, :name%>
+<%# collection_select "ingredient_id", @ingredients, :id, :name%>
 <%= form.submit %>
 <% end %>
+<br>
+
+<%= link_to "Back to Home Page", user_path(@current_user) %>

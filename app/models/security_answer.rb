@@ -1,0 +1,2 @@
+class SecurityAnswer < ApplicationRecord 
+end

@@ -1,23 +1,36 @@
 class RecipesController < ApplicationController
   def index
-    @recipe = Recipe.all
-    @ingredients = Ingredient.all
+    @recipes = Recipe.all
+    # @ingredients = Ingredient.all
     @users = User.all
+    # @current_user = User
+
   end
 
   def new
+    # @ingredients = Ingredient.all
+    @users = User.all
+    # @user = User.find(params[:id])
+    # @ingredients = Ingredient.all
     @recipe = Recipe.new
     # @ingredients = Ingredient.all
     # @users.User.all
-  end
+    @current_user = User.find(session[:user_id])
+    end
 
   def create
-    # @user = User.new
-    # @ingredient = Ingredient.new
-    # @recipe = Recipe.create(recipe_params)
     @recipe = Recipe.create(recipe_params)
+
+    if @recipe.valid?
     redirect_to @recipe
+  else
+    flash[:errors] = @recipe.errors.full_messages
+    redirect_to new_recipe_path
   end
+end
+
+    # redirect_to @recipe
+
 
   def update
     @recipe = Recipe.find(params[:id])
@@ -31,20 +44,24 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find(params[:id])
-    @ingredient = @recipe.ingredients
-    @user = @recipe.user
+    # @current_user = @recipe.current_user
+    # @current_user = @recipe.current_user
+    # @ingredient = @recipe.ingredients
+    # @user = @recipe.user
     # @user = Recipe.user
+
   end
 
   def destroy
     recipe = Recipe.find(params[:id])
     recipe.destroy
-    redirect to recipe
+    redirect_to recipe
   end
 
   private
 
   def recipe_params
-    params.require(:recipe).permit(:name, @current_user.id)
+    # params.require(:recipe).permit(:name, :ingredients, @current_user.id)
+    params.require(:recipe).permit(:name, :ingredients, :user_id)
   end
 end

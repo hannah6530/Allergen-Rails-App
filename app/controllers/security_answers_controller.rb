@@ -1,0 +1,2 @@
+class SecurityAnswersController < ApplicationController
+end

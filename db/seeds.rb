@@ -1,6 +1,8 @@
 User.destroy_all
 Recipe.destroy_all
-Ingredient.destroy_all
+SecurityQuestion.destroy_all
+SecurityAnswer.destroy_all
+
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
@@ -9,37 +11,30 @@ Ingredient.destroy_all
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-user1 =  User.create(name: "Jackie Daniels", user_name: "Jackyyy334", password: "daniels123")
-user2 =  User.create(name: "George Carlton", user_name: "Georgy123", password: "carl456")
-user3 =  User.create(name: "Timmy Tuner", user_name: "TimmmyT03",password: "password")
-user4 =  User.create(name: "Natalie Carmen", user_name: "Nat_Nat123", password: "natnatl")
-user5 =  User.create(name: "Samantha Hamilton", user_name: "Sammy_H05",password: "sammysosa")
+
+sec_ques = SecurityQuestion.create(question_1: "What is you mothers middle name?", question_2: "What is your favorite food?",
+  question_3: "What city were you born?")
+
+sec_ans1 = SecurityAnswer.create(answer_1: "Ashley", answer_2: "Pizza", answer_3: "New York")
+sec_ans2 = SecurityAnswer.create(answer_1: "Tina", answer_2: "Hotdogs", answer_3: "Newark")
+sec_ans3 = SecurityAnswer.create(answer_1: "Linda", answer_2: "Fried Chicken", answer_3: "Orlando")
+sec_ans4 = SecurityAnswer.create(answer_1: "Georgina", answer_2: "Macaroni and Cheese", answer_3: "Miami")
+sec_ans5 = SecurityAnswer.create(answer_1: "Marilyn", answer_2: "Tuna Salad", answer_3: "Hartford")
+
+user1 =  User.create(name: "Jackie Daniels", user_name: "Jackyyy334", password: "daniels123", security_question_id: sec_ques.id,
+security_answer_id: sec_ans1.id)
+user2 =  User.create(name: "George Carlton", user_name: "Georgy123", password: "carl456", security_question_id: sec_ques.id,
+security_answer_id: sec_ans2.id)
+user3 =  User.create(name: "Timmy Tuner", user_name: "TimmmyT03",password: "password", security_question_id: sec_ques.id,
+security_answer_id: sec_ans3.id)
+user4 =  User.create(name: "Natalie Carmen", user_name: "Nat_Nat123", password: "natnatl", security_question_id: sec_ques.id,
+security_answer_id: sec_ans4.id)
+user5 =  User.create(name: "Samantha Hamilton", user_name: "Sammy_H05",password: "sammysosa", security_question_id: sec_ques.id,
+security_answer_id: sec_ans5.id)
 
 
-recipe1 =  Recipe.create(name: "Spagetti and Meatballs", user_id: user1.id )
-recipe2 =  Recipe.create(name: "Chicken Alfredo", user_id: user2.id )
-recipe3 =  Recipe.create(name: "Peanut Butter and Jelly Sandwhich", user_id: user3.id )
-recipe4 =  Recipe.create(name: "Strawberry Shortcake", user_id: user4.id  )
-recipe5 =  Recipe.create(name: "Curry Goat W/ Rice", user_id: user5.id )
-
-ingredient1 =  Ingredient.create(name: "Peaunut Butter", recipe_id: recipe3.id, allergy_count: 5)
-ingredient11 = Ingredient.create(name: "Bread", recipe_id: recipe3.id, allergy_count: 5)
-ingredient2 =  Ingredient.create(name: "Jelly", recipe_id: recipe3.id, allergy_count: 3)
-
-ingredient3 =  Ingredient.create(name: "Chicken", recipe_id: recipe2.id, allergy_count: 2)
-ingredient4 =  Ingredient.create(name: "Alfredo Sauce", recipe_id: recipe2.id, allergy_count: 4)
-ingredient5 =  Ingredient.create(name: "Pasta Noodles", recipe_id: recipe2.id, allergy_count: 1)
-
-ingredient6 =   Ingredient.create(name: "Spagetti", recipe_id: recipe1.id, allergy_count: 5)
-ingredient12 =  Ingredient.create(name: "Tomato Sauce", recipe_id: recipe1.id, allergy_count: 5)
-ingredient13 =  Ingredient.create(name: "Meatballs", recipe_id: recipe1.id, allergy_count: 5)
-
-ingredient14 =  Ingredient.create(name: "Strawberries", recipe_id: recipe4.id, allergy_count: 3)
-ingredient15 =  Ingredient.create(name: "Flour", recipe_id: recipe4.id, allergy_count: 2)
-ingredient16 =  Ingredient.create(name: "Milk", recipe_id: recipe4.id, allergy_count: 4)
-ingredient17 =  Ingredient.create(name: "Eggs", recipe_id: recipe4.id, allergy_count: 1)
-
-ingredient7 =  Ingredient.create(name: "Curry Powder", recipe_id: recipe5.id, allergy_count: 3)
-ingredient8 =  Ingredient.create(name: "Goat Meat", recipe_id: recipe5.id, allergy_count: 2)
-ingredient9 =  Ingredient.create(name: "Rice", recipe_id: recipe5.id, allergy_count: 4)
-ingredient10 = Ingredient.create(name: "Pepper", recipe_id: recipe5.id, allergy_count: 1)
+recipe1 =  Recipe.create(name: "Spagetti and Meatballs", user_id: user1.id, ingredients: "Spagetti, Tomato Sauce and Meatballs")
+recipe2 =  Recipe.create(name: "Chicken Alfredo", user_id: user1.id, ingredients: "Alfredo Sauce, Chicken, and Pasta Noodles")
+recipe3 =  Recipe.create(name: "Peanut Butter and Jelly Sandwhich", user_id: user2.id, ingredients: "Peaunut Butter, Bread, Jelly")
+recipe4 =  Recipe.create(name: "Strawberry Shortcake", user_id: user2.id, ingredients: "Strawberries, Flour, Milk and Eggs ")
+recipe5 =  Recipe.create(name: "Curry Goat W/ Rice", user_id: user3.id, ingredients: "Curry Powder, Goat Meat, Rice and Pepper")

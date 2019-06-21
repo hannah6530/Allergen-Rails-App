@@ -1,5 +1,16 @@
 <h1>Create Account</h1>
 
+<% if flash[:errors] %>
+<ul>
+  <% flash[:errors].each do |error_msg| %>
+  <li>
+    <%= error_msg %>
+    </li>
+    <%end%>
+  </ul>
+  <%end%>
+
+
 
 <%= form_for @user, controller: 'users', action: 'create' do |form| %>
 <%= form.label :name %>

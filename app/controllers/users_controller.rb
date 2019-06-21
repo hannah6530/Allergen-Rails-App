@@ -5,6 +5,7 @@ class UsersController < ApplicationController
   end
 
   def new
+    # @current_user = User.new
     @user = User.new
     @recipes = Recipe.all
   end
@@ -19,7 +20,7 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to @user
     else
-      # flash[:errors] = @user.errors.full_messages
+      flash[:errors] = @user.errors.full_messages
       redirect_to new_user_path
   end
 end
@@ -45,11 +46,10 @@ end
 
 
   def destroy
-    # user = User.find(params[:id])
-    # user.destroy
-    # redirect_to users_path
+    user = User.find(params[:id])
+    user.destroy
+    redirect_to "/login/new"
    #  session.delete :user_id
-   #
    # redirect_to '/'
   end
 
