@@ -4,6 +4,7 @@ class CreateSecurityAnswers < ActiveRecord::Migration[5.2]
       t.string :answer_1
       t.string :answer_2
       t.string :answer_3
+      t.integer :sec_ques_id
     end
   end
 end

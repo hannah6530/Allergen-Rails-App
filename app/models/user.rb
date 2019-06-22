@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :recipes
+  belongs_to :security_answers
 
   has_secure_password
 

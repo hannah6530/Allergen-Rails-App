@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 2019_06_21_192834) do
     t.string "answer_1"
     t.string "answer_2"
     t.string "answer_3"
+    t.integer "sec_ques_id"
   end
 
   create_table "security_questions", force: :cascade do |t|
@@ -34,7 +35,6 @@ ActiveRecord::Schema.define(version: 2019_06_21_192834) do
     t.string "user_name"
     t.string "password_digest"
     t.string "name"
-    t.integer "security_question_id"
     t.integer "security_answer_id"
   end
 
