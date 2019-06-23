@@ -1,13 +1,14 @@
 <h2>Please answer these questions that will assist you in reseting your password in the future</h2>
 
-<%= form_for @security_answer do |form| %>
-
-<%= form.label :sec_ques_id %>
-<%= form.collection_select :sec_ques_id, @security_questions, :id, :question_1 %>
+<%= form_for @security_answer, controller: 'security_answers', action: 'create' do |form| %>
+<%= form.label :user_id %>
+<%= form.collection_select :user_id, @users, :id, :name %>
+<%= form.label :security_question_id %>
+<%= form.collection_select :security_question_id, @security_questions, :id, :question_1 %>
 <%= form.text_field :answer_1 %>
-<%= form.collection_select :sec_ques_id, @security_questions, :id, :question_2 %>
+<%= form.collection_select :security_question_id, @security_questions, :id, :question_2 %>
 <%= form.text_field :answer_2 %>
-<%= form.collection_select :sec_ques_id, @security_questions, :id, :question_3 %>
+<%= form.collection_select :security_question_id, @security_questions, :id, :question_3 %>
 <%= form.text_field :answer_3 %>
 <%= form.submit "Submit Answers" %>
 

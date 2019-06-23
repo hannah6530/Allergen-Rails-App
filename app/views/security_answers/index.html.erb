@@ -1,0 +1,11 @@
+<h2>Answers to the security Questions</h2>
+
+<ul>
+<% @security_answers.each do |sec_ans|%>
+<p>
+  1. <%=sec_ans.answer_1%>
+  2. <%=sec_ans.answer_2%>
+  3. <%=sec_ans.answer_3%>
+  </p>
+</ul>
+<% end %>

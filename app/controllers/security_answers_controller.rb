@@ -1,7 +1,8 @@
 class SecurityAnswersController < ApplicationController
-  # def index
-  #
-  # end
+  def index
+    @security_answers = SecurityAnswer.all
+
+  end
 
   def edit
     @security_answer = SecurityAnswer.find(params[:id])
@@ -9,9 +10,9 @@ class SecurityAnswersController < ApplicationController
   end
 
   def update
-    @security_answer = SecurityAnswer.find(params[:id])
-    @security_answer.update
-    redirect_to @user
+    security_answer = SecurityAnswer.find(params[:id])
+    security_answer.update
+    redirect_to security_answer
 
   end
 
@@ -24,12 +25,12 @@ class SecurityAnswersController < ApplicationController
 
   def create
     @security_answer = SecurityAnswer.create(security_answers_params)
-    redirect_to @user
+    redirect_to @security_answer
 
   end
 
   def security_answers_params
-    params.require(:security_answer).permit(:answer_1, :answer_2, :answer_3, :sec_ques_id)
+    params.require(:security_answer).permit(:answer_1, :answer_2, :answer_3, :security_question_id, :user_id)
 
   end
 end
