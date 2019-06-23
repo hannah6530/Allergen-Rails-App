@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   resources :recipes
   resources :ingredients
   resources :login, only: [:new, :create]
+  resources :security_questions
+  resources :security_answers
   delete "/logout", to: "login#destroy"
 
  #this --> resources :login, only: [:new, :create] is the same as   get '/login' => 'login#new' and post '/login' => 'login#create'

@@ -8,6 +8,7 @@ class UsersController < ApplicationController
     # @current_user = User.new
     @user = User.new
     @recipes = Recipe.all
+    @security_answer = SecurityAnswer.all
   end
 
   def create
@@ -18,10 +19,11 @@ class UsersController < ApplicationController
     # redirect_to user
     if @user.valid?
       session[:user_id] = @user.id
-      redirect_to @user
+      redirect_to new_security_answer_path
     else
       flash[:errors] = @user.errors.full_messages
       redirect_to new_user_path
+
   end
 end
 
@@ -31,6 +33,7 @@ end
 
   def edit
     @user = User.find(params[:id])
+    @security_answer = SecurityAnswer.all
   end
 
   def update

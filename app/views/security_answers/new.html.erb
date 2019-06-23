@@ -1,0 +1,4 @@
+<h2>Please answer these questions that will assist you in reseting your password in the future</h2>
+
+<%= form_for @security_answer do |form| %>
+<%= form.collection_select :security_question_id, @security_questions, :id, :
