@@ -8,10 +8,12 @@ class UsersController < ApplicationController
     # @current_user = User.new
     @user = User.new
     @recipes = Recipe.all
-    @security_answer = SecurityAnswer.all
+    @security_questions = SecurityQuestion.all
+    # @security_answer = SecurityAnswer.new
   end
 
   def create
+    @security_answer = SecurityAnswer.new
     @user = User.create(user_params)
     # return redirect_to controller: 'users', action: 'new' unless @user.save
     # session[:user_id] = @user.id
@@ -19,7 +21,7 @@ class UsersController < ApplicationController
     # redirect_to user
     if @user.valid?
       session[:user_id] = @user.id
-      redirect_to new_security_answer_path
+      redirect_to "/security_answers/new"
     else
       flash[:errors] = @user.errors.full_messages
       redirect_to new_user_path

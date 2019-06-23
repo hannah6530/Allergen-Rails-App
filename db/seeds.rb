@@ -15,21 +15,21 @@ SecurityAnswer.destroy_all
 sec_ques = SecurityQuestion.create(question_1: "What is you mothers middle name?", question_2: "What is your favorite food?",
   question_3: "What city were you born?")
 
-sec_ans1 = SecurityAnswer.create(answer_1: "Ashley", answer_2: "Pizza", answer_3: "New York", sec_ques_id: sec_ques.id )
-sec_ans2 = SecurityAnswer.create(answer_1: "Tina", answer_2: "Hotdogs", answer_3: "Newark", sec_ques_id: sec_ques.id )
-sec_ans3 = SecurityAnswer.create(answer_1: "Linda", answer_2: "Fried Chicken", answer_3: "Orlando", sec_ques_id: sec_ques.id )
-sec_ans4 = SecurityAnswer.create(answer_1: "Georgina", answer_2: "Macaroni and Cheese", answer_3: "Miami", sec_ques_id: sec_ques.id )
-sec_ans5 = SecurityAnswer.create(answer_1: "Marilyn", answer_2: "Tuna Salad", answer_3: "Hartford", sec_ques_id: sec_ques.id )
+sec_ans1 = SecurityAnswer.create(answer_1: "Ashley", answer_2: "Pizza", answer_3: "New York", security_question_id: sec_ques.id, user_id: user1.id)
+sec_ans2 = SecurityAnswer.create(answer_1: "Tina", answer_2: "Hotdogs", answer_3: "Newark", security_question_id: sec_ques.id, user_id: user2.id)
+sec_ans3 = SecurityAnswer.create(answer_1: "Linda", answer_2: "Fried Chicken", answer_3: "Orlando", security_question_id: sec_ques.id, user_id: user3.id)
+sec_ans4 = SecurityAnswer.create(answer_1: "Georgina", answer_2: "Macaroni and Cheese", answer_3: "Miami", security_question_id: sec_ques.id, user_id: user4.id)
+sec_ans5 = SecurityAnswer.create(answer_1: "Marilyn", answer_2: "Tuna Salad", answer_3: "Hartford", security_question_id: sec_ques.id, user_id: user5.id )
 
-user1 =  User.create(name: "Jackie Daniels", user_name: "Jackyyy334", password: "daniels123", security_answer_id: sec_ans1.id)
+user1 =  User.create(name: "Jackie Daniels", user_name: "Jackyyy334", password: "daniels123")
 
-user2 =  User.create(name: "George Carlton", user_name: "Georgy123", password: "carl456", security_answer_id: sec_ans2.id)
+user2 =  User.create(name: "George Carlton", user_name: "Georgy123", password: "carl456")
 
-user3 =  User.create(name: "Timmy Tuner", user_name: "TimmmyT03",password: "password", security_answer_id: sec_ans3.id)
+user3 =  User.create(name: "Timmy Tuner", user_name: "TimmmyT03",password: "password")
 
-user4 =  User.create(name: "Natalie Carmen", user_name: "Nat_Nat123", password: "natnatl", security_answer_id: sec_ans4.id)
+user4 =  User.create(name: "Natalie Carmen", user_name: "Nat_Nat123", password: "natnatl")
 
-user5 =  User.create(name: "Samantha Hamilton", user_name: "Sammy_H05",password: "sammysosa", security_answer_id: sec_ans5.id)
+user5 =  User.create(name: "Samantha Hamilton", user_name: "Sammy_H05",password: "sammysosa")
 
 
 recipe1 =  Recipe.create(name: "Spagetti and Meatballs", user_id: user1.id, ingredients: "Spagetti, Tomato Sauce and Meatballs")

@@ -17,7 +17,8 @@ class SecurityAnswersController < ApplicationController
 
   def new
     @security_answer = SecurityAnswer.new
-    @security_question = SecurityQuestion.all
+    @security_questions = SecurityQuestion.all
+    @users = User.all
 
   end
 

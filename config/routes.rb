@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :users
   resources :recipes
   resources :ingredients
-  resources :login, only: [:new, :create]
+  resources :login
   resources :security_questions
   resources :security_answers
   delete "/logout", to: "login#destroy"
