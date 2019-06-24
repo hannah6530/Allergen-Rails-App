@@ -1,6 +1,7 @@
 class SecurityAnswersController < ApplicationController
   def index
     @security_answers = SecurityAnswer.all
+    @users = User.all
 
   end
 
@@ -13,13 +14,13 @@ class SecurityAnswersController < ApplicationController
     security_answer = SecurityAnswer.find(params[:id])
     security_answer.update
     redirect_to security_answer
-
   end
 
   def new
     @security_answer = SecurityAnswer.new
     @security_questions = SecurityQuestion.all
     @users = User.all
+    @current_user = User.find(session[:user_id])
 
   end
 

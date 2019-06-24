@@ -1,4 +1,4 @@
 class SecurityAnswer < ApplicationRecord
   belongs_to :security_question
-  belongs_to :security_answer
+  belongs_to :user
 end
