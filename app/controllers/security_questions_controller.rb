@@ -11,11 +11,11 @@ class SecurityQuestionsController < ApplicationController
     @security_question = SecurityQuestion.find(params[:id])
   end
 
-  def edit
-  end
-
-  def update
-  end
+  # def edit
+  # end
+  #
+  # def update
+  # end
 
   private
   def security_question_params

@@ -2,11 +2,15 @@
 
 
 <ul>
-<% @security_answers.each do |sec_ans|%>
+<% @current_user.security_answers.each do |sec_ans|%>
 <p>
-  1. <%=sec_ans.answer_1%>
-  2. <%=sec_ans.answer_2%>
-  3. <%=sec_ans.answer_3%>
+1. <%=sec_ans.answer_1%>
+<br>
+2. <%=sec_ans.answer_2%>
+<br>
+3. <%=sec_ans.answer_3%>
   </p>
 </ul>
 <% end %>
+
+<%= link_to "Back to Home Page", user_path(@current_user) %>

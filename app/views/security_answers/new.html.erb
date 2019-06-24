@@ -1,6 +1,6 @@
 <h2>Please answer these questions that will assist you in reseting your password in the future</h2>
 
-<%= form_for @security_answer, controller: 'security_answers', action: 'create' do |form| %>
+<%= form_for @security_answer do |form| %>
 <%= form.label :user_id %>
 <%= form.collection_select :user_id, @users, :id, :name %>
 <%= form.label :security_question_id %>

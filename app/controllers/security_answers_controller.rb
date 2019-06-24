@@ -22,11 +22,12 @@ class SecurityAnswersController < ApplicationController
     @users = User.all
     @current_user = User.find(session[:user_id])
 
+
   end
 
   def create
     @security_answer = SecurityAnswer.create(security_answers_params)
-    redirect_to @security_answer
+    redirect_to @current_user
 
   end
 
