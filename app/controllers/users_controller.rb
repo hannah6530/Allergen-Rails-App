@@ -58,6 +58,13 @@ end
    # redirect_to '/'
   end
 
+  def find_user
+    # @user = User.find(params[:user_name])
+    # @user = User.all
+    @users = User.search(params[:search])
+    redirect_to "/security_answers/#{@user.id}/verify"
+  end
+
   private
 
   def user_params

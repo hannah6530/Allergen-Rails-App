@@ -7,6 +7,14 @@ class User < ApplicationRecord
 
   validates :user_name, uniqueness: true, presence: true
 
+  def self.search(user_name)
+    if :user_name
+        where('USERNAME LIKE ?', "%#{user_name}%")
+    else
+        all
+    end
+end
+
 
   # def password=(pass)
   #   self.password_digest = BCrypt::Password.create(pass)

@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  get "/security_answers/verify", to: "security_answers#verify"
+  # get "/security_answers/verify", to: "security_answers#verify"
+  # get "/security_answers/find_user", to: "security_answers#find_user"
+
+  get "/users/find_user", to: "users#find_user"
+  get "/security_answers/:id/verify", to: "security_answers#verify"
+
   resources :users
 
   resources :recipes

@@ -1,0 +1,8 @@
+<h2>Please Enter the Username associated with your account</h2>
+
+<%= form_tag users_path, :method => 'get', :id => 'users_search' do %>
+    <p> <%= label_tag(:user_name, "Search for:") %>
+        <%= text_field_tag :search, params[:search] %>
+        <%= submit_tag "Search", :user_name => nil %>
+    </p>
+<% end %>
