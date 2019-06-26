@@ -25,4 +25,8 @@ end
     logout
     redirect_to new_login_path
   end
+
+  # def new
+  #   @user = User.find(params[:id])
+  # end
 end

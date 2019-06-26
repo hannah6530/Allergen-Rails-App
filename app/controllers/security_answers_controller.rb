@@ -31,6 +31,19 @@ class SecurityAnswersController < ApplicationController
 
   end
 
+  def verify
+    # @security_answer = SecurityAnswer.new
+    # @security_questions = SecurityQuestion.all
+    # @users = User.all
+    # @current_user = User.find(session[:user_id])
+
+
+
+  end
+
+  # def show
+  # end
+
   def security_answers_params
     params.require(:security_answer).permit(:answer_1, :answer_2, :answer_3, :security_question_id, :user_id)
 
