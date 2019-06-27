@@ -16,6 +16,8 @@
 <%= form.text_field :ingredients %>
 <%= form.collection_select :user_id, @users, :id, :name%>
 <%# collection_select "ingredient_id", @ingredients, :id, :name%>
+<%= form.label "Upload Photo" %>
+<%= form.file_field :food_photo %>
 <%= form.submit %>
 <% end %>
 <br>

@@ -40,10 +40,12 @@ end
 
   def edit
     @recipe = Recipe.find(params[:id])
+    # @recipe.food_photo.attach(params[:food_photo])
   end
 
   def show
     @recipe = Recipe.find(params[:id])
+
     # @current_user = @recipe.current_user
     # @current_user = @recipe.current_user
     # @ingredient = @recipe.ingredients
@@ -62,6 +64,6 @@ end
 
   def recipe_params
     # params.require(:recipe).permit(:name, :ingredients, @current_user.id)
-    params.require(:recipe).permit(:name, :ingredients, :user_id)
+    params.require(:recipe).permit(:name, :ingredients, :user_id, :food_photo)
   end
 end

@@ -24,7 +24,26 @@
    font-family: 'Snell Roundhand', cursive;
    font-weight: bold;
    font-size: 20px;
+
+   /* The image used */
+  /* background-image: url("veggies.jpg", image); */
+  /* background-image: asset-path('veggies.jpg'); */
+  /* asset-url("logo.png", image) */
+
+  /* Full height */
+  /* height: 100%; */
+
+  /* Center and scale the image nicely */
+  /* background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; */
  }
+ /* .background{
+
+} */
+
+
+ /* } */
 
  /* img {
    max-width: 100%;
